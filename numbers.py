@@ -37,6 +37,14 @@ nums = {
 def parse(string):
 	if (string in nums):
 		return nums[string]
+
+	if (string.find(' ')  == -1): #single word
+		if (string.replace('ty', '') in nums):
+			return nums[string.replace('ty', '')] * 10
+
+		if (string.replace('teen', '') in nums):
+			return nums[string.replace('teen', '')] + 10
+
 	return -1
 
 try:
