@@ -12,7 +12,7 @@ if (len(sys.argv) > 1):
 
 #else print welcome stuff and start the loop
 os.system(['clear','cls'][os.name == 'nt'])
-print('Welcome to numbers.py!\n')
+print('\033[1mWelcome to numbers.py!\033[0;0m\n')
 print('This script attempts to convert numbers from word form to proper numbers.')
 print('It is an experiment, so don\'t expect it to work properly.\n')
 

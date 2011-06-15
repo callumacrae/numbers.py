@@ -9,6 +9,7 @@ nums = {
 	'two': 2,
 	'three': 3,
 	'thir': 3,
+	'for': 4,
 	'four': 4,
 	'five': 5,
 	'fif': 5,
