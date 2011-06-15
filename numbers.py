@@ -4,12 +4,6 @@ if sys.version_info[0] < 3:
 	print('This application was designed to run for Python3. Get out')
 	exit()
 
-os.system(['clear','cls'][os.name == 'nt'])
-
-print('Welcome to numbers.py!\n')
-print('This script attempts to convert numbers from word form to proper numbers.')
-print('It is an experiment, so don\'t expect it to work properly.\n')
-
 nums = {
 	'quarter': 0.25,
 	'half': 0.5,
@@ -47,6 +41,31 @@ def parse(string):
 
 	return -1
 
+def get(string):
+	try:
+		float(string)
+		return 'That\'s already an int!'
+	except(ValueError):
+		cont = 1
+
+	parsed_string = parse(string)
+	if (parsed_string == -1):
+		return 'Failed to parse string.'
+	else:
+		return '"' + string + '" parses to ' + str(parsed_string)
+
+#if specified in argv, print and exit
+if (len(sys.argv) > 1):
+	print(get(sys.argv[1]))
+	exit()
+
+#else print welcome stuff and start the loop
+os.system(['clear','cls'][os.name == 'nt'])
+print('Welcome to numbers.py!\n')
+print('This script attempts to convert numbers from word form to proper numbers.')
+print('It is an experiment, so don\'t expect it to work properly.\n')
+
+
 try:
 	while True:
 		string = input('Please enter a string to convert to a number: ')
@@ -54,21 +73,7 @@ try:
 			print('\nThanks for using numbers.py\n\n')
 			exit()
 
-		try:
-			float(string)
-			print('That\'s already an int!\n')
-			continue
-		except(ValueError):
-			while(0):
-				print('what?')
-
-		parsed_string = parse(string)
-		if (parsed_string == -1):
-			print('Failed to parse string.')
-		else:
-			print('"' + string + '" parses to ' + str(parsed_string))
-
-		print() #new line
+		print(get(string) + '\n')
 
 except(KeyboardInterrupt):
 	print('\n\nThanks for using numbers.py\n\n')
