@@ -38,7 +38,43 @@ def parse(string):
 		if (string.replace('teen', '') in nums):
 			return nums[string.replace('teen', '')] + 10
 
-	return -1
+		parts = string.partition('-');
+		if (parts[1] == '-'):
+			return parse(parts[0]) + parse(parts[2])
+
+	end = 0
+
+	parts = string.partition(' billion');
+	if (parts[1] == ' billion'):
+		end += parse(parts[0]) * 1000000000
+		string = parts[2]
+		if (string.find(', ') == 0):
+			string = string.replace(', ', '', 1)
+
+	parts = string.partition(' million');
+	if (parts[1] == ' million'):
+		end += parse(parts[0]) * 1000000
+		string = parts[2]
+		if (string.find(', ') == 0):
+			string = string.replace(', ', '', 1)
+
+	parts = string.partition(' thousand');
+	if (parts[1] == ' thousand'):
+		end += parse(parts[0]) * 1000
+		string = parts[2]
+		if (string.find(', ') == 0):
+			string = string.replace(', ', '', 1)
+
+	parts = string.partition(' hundred');
+	if (parts[1] == ' hundred'):
+		end += parse(parts[0]) * 100
+		string = parts[2]
+
+	parts = string.rpartition(' and ');
+	if (parts[1] == ' and '):
+		end += parse(parts[2])
+
+	return end
 
 def get(string):
 	try:

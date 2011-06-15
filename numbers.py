@@ -1,4 +1,5 @@
-import os, lib, sys
+#!/usr/bin/env python
+import os, sys
 from lib import get
 
 if sys.version_info[0] < 3:
