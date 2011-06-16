@@ -129,7 +129,10 @@ class TestSequenceFunctions(unittest.TestCase):
 			'two hundred thousand, four hundred and twenty-seven': 200427,
 			'three hundred and forty-seven million, three hundred and forty-seven thousand, three hundred and forty-seven': 347347347,
 			'three hundred and eighty-three': 383,
-			'one million, seven hundred and thirteen thousand, nine hundred and eighty-two': 1713982
+			'one million, seven hundred and thirteen thousand, nine hundred and eighty-two': 1713982,
+			'seven hundred and two vigintillion': 702000000000000000000000000000000000000000000000000000000000000000,
+			'one novemdecillion, three quintillion sextillion': 1000000000000000000003000000000000000000000000000000000000000,
+			'four million, two hundred and seven thousand trillion': 4207000000000000000
 		}
 
 if __name__ == '__main__':

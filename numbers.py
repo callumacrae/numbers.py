@@ -8,6 +8,9 @@ if sys.version_info[0] < 3:
 
 #if specified in argv, print and exit
 if (len(sys.argv) > 1):
+	if (sys.argv[1] == 'test'):
+		os.system('./test.py')
+		exit()
 	print(get(sys.argv[1]))
 	exit()
 

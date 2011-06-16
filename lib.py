@@ -27,7 +27,26 @@ nums = {
 	'million': 1000000
 };
 
+#uses the american system of powers of ten
 tens = [
+	['vigintillion', 63],
+	['novemdecillion', 60],
+	['octodecillion', 57],
+	['septendecillion', 54],
+	['sexdecillion', 51],
+	['quindecillion', 48],
+	['quattuordecillion', 45],
+	['tredecillion', 42],
+	['duodecillion', 39],
+	['undecillion', 36],
+	['decillion', 33],
+	['nonillion', 30],
+	['octillion', 27],
+	['septillion', 24],
+	['sextillion', 21],
+	['quintillion', 18],
+	['quadrillion', 15],
+	['trillion', 12],
 	['billion', 9],
 	['million', 6],
 	['thousand', 3],
