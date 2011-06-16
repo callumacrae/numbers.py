@@ -1,6 +1,6 @@
 if __name__ == '__main__':
-	print('This is a library. Get out.')
-	exit()
+	print('This is a library. Get out.');
+	exit();
 
 nums = {
 	'quarter': 0.25,
@@ -51,48 +51,48 @@ tens = [
 	['million', 6],
 	['thousand', 3],
 	['hundred', 2]
-]
+];
 
 def parse(string):
 	if (string in nums):
-		return nums[string]
+		return nums[string];
 
 	if (string.find(' ')  == -1): #single word
 		if (string.replace('ty', '') in nums):
-			return nums[string.replace('ty', '')] * 10
+			return nums[string.replace('ty', '')] * 10;
 
 		if (string.replace('teen', '') in nums):
-			return nums[string.replace('teen', '')] + 10
+			return nums[string.replace('teen', '')] + 10;
 
 		parts = string.partition('-');
 		if (parts[1] == '-'):
-			return parse(parts[0]) + parse(parts[2])
+			return parse(parts[0]) + parse(parts[2]);
 
-	end = 0
+	end = 0;
 
 	for ten in tens:
 		parts = string.partition(' ' + ten[0]);
 		if (parts[1] == ' ' + ten[0]):
-			end += parse(parts[0]) * 10 ** ten[1]
-			string = parts[2]
+			end += parse(parts[0]) * 10 ** ten[1];
+			string = parts[2];
 			if (string.find(', ') == 0):
-				string = string.replace(', ', '', 1)
+				string = string.replace(', ', '', 1);
 
 	parts = string.rpartition(' and ');
 	if (parts[1] == ' and '):
-		end += parse(parts[2])
+		end += parse(parts[2]);
 
-	return end
+	return end;
 
 def get(string):
 	try:
-		float(string)
-		return 'That\'s already an int!'
+		float(string);
+		return 'That\'s already an int!';
 	except(ValueError):
-		cont = 1
+		cont = 1;
 
-	parsed_string = parse(string)
+	parsed_string = parse(string);
 	if (parsed_string == -1):
-		return 'Failed to parse string.'
+		return 'Failed to parse string.';
 	else:
-		return '"' + string + '" parses to ' + str(parsed_string)
+		return '"' + string + '" parses to ' + str(parsed_string);

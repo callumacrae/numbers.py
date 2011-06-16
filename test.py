@@ -1,10 +1,10 @@
 #!/usr/bin/env python
-import os, unittest
-from lib import get
+import os, unittest;
+from lib import get;
 
 class TestSequenceFunctions(unittest.TestCase):
 	def setUp(self):
-		self.seq = range(10)
+		self.seq = range(10);
 
 	def test_single_part(self):
 		expected = {
@@ -35,9 +35,9 @@ class TestSequenceFunctions(unittest.TestCase):
 			'seventy': 70,
 			'eighty': 80,
 			'ninety': 90
-		}
+		};
 		for test in expected:
-			self.assertEqual(get(test), '"' + test + '" parses to ' + str(expected[test]))
+			self.assertEqual(get(test), '"' + test + '" parses to ' + str(expected[test]));
 
 	def test_double_part(self):
 		expected = {
@@ -113,9 +113,9 @@ class TestSequenceFunctions(unittest.TestCase):
 			'ninety-seven': 97,
 			'ninety-eight': 98,
 			'ninety-nine': 99,
-		}
+		};
 		for test in expected:
-			self.assertEqual(get(test), '"' + test + '" parses to ' + str(expected[test]))
+			self.assertEqual(get(test), '"' + test + '" parses to ' + str(expected[test]));
 
 	def test_complex_nums(self):
 		expected = {
@@ -124,7 +124,7 @@ class TestSequenceFunctions(unittest.TestCase):
 			'two million billion and seven': 2000000000000007,
 			'forty-seven thousand': 47000,
 			'forty-two million, forty-three thousand': 42043000,
-			'twenty-seven thousand, forty hundred and twenty-two': 27422,
+			'twenty-seven thousand, four hundred and twenty-two': 27422,
 			'seven million, four hundred thousand': 7400000,
 			'two hundred thousand, four hundred and twenty-seven': 200427,
 			'three hundred and forty-seven million, three hundred and forty-seven thousand, three hundred and forty-seven': 347347347,
@@ -133,10 +133,12 @@ class TestSequenceFunctions(unittest.TestCase):
 			'seven hundred and two vigintillion': 702000000000000000000000000000000000000000000000000000000000000000,
 			'one novemdecillion, three quintillion sextillion': 1000000000000000000003000000000000000000000000000000000000000,
 			'four million, two hundred and seven thousand trillion': 4207000000000000000
-		}
+		};
+		for test in expected:
+			self.assertEqual(get(test), '"' + test + '" parses to ' + str(expected[test]));
 
 if __name__ == '__main__':
-	os.system(['clear','cls'][os.name == 'nt'])
-	print('\033[1mStarting tests:\033[0;0m\n')
-	suite = unittest.TestLoader().loadTestsFromTestCase(TestSequenceFunctions)
-	unittest.TextTestRunner(verbosity=2).run(suite)
+	os.system(['clear','cls'][os.name == 'nt']);
+	print('\033[1mStarting tests:\033[0;0m\n');
+	suite = unittest.TestLoader().loadTestsFromTestCase(TestSequenceFunctions);
+	unittest.TextTestRunner(verbosity=2).run(suite);
